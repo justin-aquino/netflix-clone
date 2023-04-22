@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Input from "../components/Input";
 
 const Auth = () => {
+  const [email, setEmail] = useState("");
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')]">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
@@ -14,10 +16,12 @@ const Auth = () => {
               {" "}
               <Input
                 label="Email"
-                onChange={() => {}}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
                 id="email"
                 type="email"
-                value=""
+                value={email}
               />
             </div>
           </div>
