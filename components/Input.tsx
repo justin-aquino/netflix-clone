@@ -51,6 +51,7 @@ const Input: React.FC<InputProps> = ({ id, onChange, label, type, value }) => {
         peer-placeholder-shown:translate-y-0
         peer-focus:scale-75
         peer-focus:-translate-y-3
+        rounded-md
         "
       >
         {label}
