@@ -15,9 +15,9 @@ datasource db {
 
 model User {
   id String @id @default (auto()) @map("_id") @db.ObjectId //using proper object id type since we're using both prisma and mongodb
-  name String
+  userName String
   image String? //question mark means its optional
-  email String? //needs questions because user can login using google auth etc
+  email String? @unique//needs questions because user can login using google auth etc
   emailVerified DateTime?
   hashedPassword String? //if using google auth etc, we're not gonna have hash password
   createdAt DateTime @default(now())
