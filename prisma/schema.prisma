@@ -76,3 +76,5 @@ model Movie {
   genre String
   duration String
 }
+
+//npx prisma db push to create collection on mongodb 56:10 on https://www.youtube.com/watch?v=mqUN4N2q4qY

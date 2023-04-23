@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import Input from "../components/Input";
+import axios from "axios";
 
 const Auth = () => {
   const [userName, setUserName] = useState("");
@@ -12,6 +13,19 @@ const Auth = () => {
       currentVariant === "login" ? "register" : "login"
     );
   }, []);
+
+  const register = useCallback(async () => {
+    try {
+      await axios.post("/api/register", {
+        email,
+        userName,
+        password,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')]">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
