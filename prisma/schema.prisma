@@ -12,69 +12,67 @@ datasource db {
 
 //MODELS
 
-
 model User {
-  id String @id @default (auto()) @map("_id") @db.ObjectId //using proper object id type since we're using both prisma and mongodb
-  userName String
-  image String? //question mark means its optional
-  email String? @unique//needs questions because user can login using google auth etc
-  emailVerified DateTime?
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId //using proper object id type since we're using both prisma and mongodb
+  userName       String
+  image          String? //question mark means its optional
+  email          String?   @unique //needs questions because user can login using google auth etc
+  emailVerified  DateTime?
   hashedPassword String? //if using google auth etc, we're not gonna have hash password
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt //prisma method, gonna update for us automatically.
-  favoriteIds String[] @db.ObjectId //which means its gonna be an array of IDs
-  sessions Session[]
-  accounts Account[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt //prisma method, gonna update for us automatically.
+  favoriteIds    String[]  @db.ObjectId //which means its gonna be an array of IDs
+  sessions       Session[]
+  accounts       Account[]
 }
-
 
 //this is we make an account using google
 model Account {
-   id String @id @default (auto()) @map("_id") @db.ObjectId
-   //create relatino between id and userId
-   userId String @db.ObjectId
-   type String
-   provider String
-   providerAccountId String
-   refresh_token String? @db.String
-   access_token String? @db.String
-   expires_at Int?
-   token_type String?
-   scope String?
-   id_token String? @db.String
-   session_state String?
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  //create relatino between id and userId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
 
-   //create relations
-   user User @relation(fields: [userId], references:[id], onDelete:Cascade)
-   @@unique([provider, providerAccountId])
+  //create relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }
 
 model Session {
-  id String @id @default (auto()) @map("_id") @db.ObjectId 
-  sessionToken String @unique
-  userId String @db.ObjectId
-  expires DateTime
-  user User @relation(fields: [userId], references:[id], onDelete:Cascade)
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
-  id String @id @default (auto()) @map("_id") @db.ObjectId
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
   identifier String
-  token String @unique
-  expires DateTime
-  
+  token      String   @unique
+  expires    DateTime
+
   @@unique([identifier, token])
-  
 }
 
 model Movie {
-  id String @id @default (auto()) @map("_id") @db.ObjectId
-  title String
-  description String
-  videoUrl String
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  description  String
+  videoUrl     String
   thumbnailUrl String
-  genre String
-  duration String
+  genre        String
+  duration     String
 }
 
 //npx prisma db push to create collection on mongodb 56:10 on https://www.youtube.com/watch?v=mqUN4N2q4qY
