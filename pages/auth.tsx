@@ -40,12 +40,10 @@ const Auth = () => {
     userName,
     password,
    });
-
-   login();
   } catch (err) {
    console.log(err);
   }
- }, [email, userName, password, login()]);
+ }, [email, userName, password, login]);
 
  return (
   <div className="relative h-full w-full bg-[url('/images/hero.jpg')]">
