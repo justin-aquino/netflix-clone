@@ -27,7 +27,7 @@ export default function Home() {
  return (
   <>
    <h1 className=" text-2x1 text-green-500">Netflix Clone</h1>
-   <p> Logged in as: {user?.email} </p>
+   <p className="text-white"> Logged in as: {user?.userName} </p>
    <button
     className="h-10 w-full bg-white"
     onClick={() => {
