@@ -21,15 +21,15 @@ const Navibar = () => {
      <NavbarItem label="My List" />
      <NavbarItem label="Browse by Languages" />
     </ul>
-   </div>
-   <div
-    onClick={toggleMobileMenu}
-    tabIndex={0}
-    className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer"
-   >
-    <p className="text-white text-sm"> Browse</p>
-    <BsChevronDown className="text-white transition" />
-    <MobileMenu visible={showMobileMenu} />
+    <div
+     onClick={toggleMobileMenu}
+     tabIndex={0}
+     className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative"
+    >
+     <p className="text-white text-sm"> Browse</p>
+     <BsChevronDown className="text-white transition" />
+     <MobileMenu visible={showMobileMenu} />
+    </div>
    </div>
   </nav>
  );
