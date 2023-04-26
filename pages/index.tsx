@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import { getSession, signOut } from "next-auth/react";
 import { NextPageContext } from "next";
 import useCurrentUser from "@/hooks/useCurrentUser";
+import Navibar from "@/components/Navibar";
 
 export async function getServerSideProps(context: NextPageContext) {
  const session = await getSession(context);
@@ -26,16 +27,7 @@ export default function Home() {
  console.log(user);
  return (
   <>
-   <h1 className=" text-2x1 text-green-500">Netflix Clone</h1>
-   <p className="text-white"> Logged in as: {user?.userName} </p>
-   <button
-    className="h-10 w-full bg-white"
-    onClick={() => {
-     signOut();
-    }}
-   >
-    logout
-   </button>
+   <Navibar />
   </>
  );
 }
