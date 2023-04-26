@@ -51,7 +51,11 @@ const Navibar = () => {
        <img src="/images/default-red.png" alt="profile image" />
       </div>
 
-      <BsChevronDown className="text-white transition" />
+      <BsChevronDown
+       className={`text-white transition ${
+        showAccountMenu ? "rotate-180" : "rotate-0"
+       }`}
+      />
       <AccountMenu visible={showAccountMenu} />
      </div>
     </div>
