@@ -5,7 +5,14 @@ const Billboard = () => {
  const { data } = useBillboard();
  return (
   <div className="relative h-[56.25vw]">
-   <video src={data?.videoUrl} poster={data?.thumbnailUrl}></video>
+   <video
+    className="w-full h-[56.25vw] object-cover brightness-[60%]"
+    autoPlay
+    muted
+    loop
+    src={data?.videoUrl}
+    poster={data?.thumbnailUrl}
+   ></video>
   </div>
  );
 };
