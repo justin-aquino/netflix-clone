@@ -2,11 +2,29 @@ import NavbarItem from "./NavbarItem";
 import AccountMenu from "./AccountMenu";
 import { BsBell, BsChevronDown, BsSearch } from "react-icons/bs";
 import MobileMenu from "./MobileMenu";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 const Navibar = () => {
  const [showMobileMenu, setShowMobileMenu] = useState(false);
  const [showAccountMenu, setShowAccountMenu] = useState(false);
+ const [showBackground, setShowBackground] = useState(false);
+
+ const TOP_OFFSET = 66;
+
+ useEffect(() => {
+  const handleScroll = () => {
+   if (window.scrollY > TOP_OFFSET) {
+    setShowBackground(true);
+   } else {
+    setShowBackground(false);
+   }
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => {
+   //this is how you write an unMount function in a useEffect.
+   window.removeEventListener("scroll", handleScroll);
+  };
+ }, []);
 
  const toggleMobileMenu = useCallback(() => {
   setShowMobileMenu((current) => !current);
@@ -17,7 +35,11 @@ const Navibar = () => {
  }, [showAccountMenu]);
  return (
   <nav className="w-full fixed z-40">
-   <div className="px-4 md:px16 py-6 flex flex-row items-center transition duration-500 bg-zinc-900 bg-opacity-90">
+   <div
+    className={`px-4 md:px16 py-6 flex flex-row items-center transition duration-500  ${
+     showBackground ? "bg-zinc-900 bg-opacity-90" : ""
+    }`}
+   >
     <img className="h-4 lg:h-7" src="/images/logo.png" alt="netflix logo" />
     <ul className="flex-row ml-8 gap-7 hidden lg:flex">
      <NavbarItem label="Home" />
