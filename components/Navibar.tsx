@@ -59,13 +59,13 @@ const Navibar = () => {
      <MobileMenu visible={showMobileMenu} />
     </div>
     <div className="flex flex-row ml-auto gap-7 items-center">
-     <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
+     <button className="text-gray-200 hover:text-gray-300 cursor-pointer">
       <BsSearch />
-     </div>
-     <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
+     </button>
+     <button className="text-gray-200 hover:text-gray-300 cursor-pointer">
       <BsBell />
-     </div>
-     <div
+     </button>
+     <button
       onClick={toggleAccountMenu}
       className="flex flex-row items-center gap-2 cursor-pointer relative"
      >
@@ -79,7 +79,7 @@ const Navibar = () => {
        }`}
       />
       <AccountMenu visible={showAccountMenu} />
-     </div>
+     </button>
     </div>
    </div>
   </nav>
