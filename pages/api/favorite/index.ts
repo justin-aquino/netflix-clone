@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
 import { without } from "lodash";
-import prismadb from "../../lib/prismadb";
-import serverAuth from "../../lib/serverAuth";
+
+import prismadb from "@/lib/prismadb";
+import serverAuth from "@/lib/serverAuth";
 
 export default async function handler(
   req: NextApiRequest,
@@ -53,7 +53,7 @@ export default async function handler(
         throw new Error("Invalid ID");
       }
 
-      const updatedFavoriteIds = without(currentUser.favoriteIds, movieId); //without accepts the array we're querying into, and 2nd arg is the id of what we're going to delete.
+      const updatedFavoriteIds = without(currentUser.favoriteIds, movieId);
 
       const updatedUser = await prismadb.user.update({
         where: {
@@ -67,9 +67,10 @@ export default async function handler(
       return res.status(200).json(updatedUser);
     }
 
-    return res.status(405).end(); //if we get a method thats neither delete or post
+    return res.status(405).end();
   } catch (error) {
     console.log(error);
-    return res.status(400).end();
+
+    return res.status(500).end();
   }
 }
