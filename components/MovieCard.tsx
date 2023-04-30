@@ -78,10 +78,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             >
               <BsFillPlayFill size={30} />
             </button>
-            <FavoriteBtn movieId={data?.movieId} />
+            <FavoriteBtn movieId={data?.id} />
           </div>
           <p className="text-green-400 font-semibold mt-4">
-            {" "}
             New <span className="text-white"> 2023</span>
           </p>
           <div className="flex flex-row mt-4 gap-2 items-center">
