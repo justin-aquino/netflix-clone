@@ -9,6 +9,7 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
  const router = useRouter();
+
  return (
   <div className="group bg-zinc-900 col-span relative h-[12vw]">
    <img
