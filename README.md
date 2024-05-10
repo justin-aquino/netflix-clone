@@ -1,5 +1,5 @@
 # NETFLIX CLONE
-Typescript, Prisma, TailwindCSS,and MongoDB
+Typescript, NextJS, Prisma, TailwindCSS,and MongoDB
 ## Why I chose this project.
 For my second GA Project, I decided to build a fullstack app that tracks the artisan beers the user has tried. The inspiration behind the app goes back to my experience as a chef where after every busy shift, employees share a few pints of beer while cleaning the kitchen to reward ourselves for our hard work. 
 
