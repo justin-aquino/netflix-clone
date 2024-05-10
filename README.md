@@ -1,39 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NETFLIX CLONE
+Typescript, Prisma, TailwindCSS,and MongoDB
+## Why I chose this project.
+For my second GA Project, I decided to build a fullstack app that tracks the artisan beers the user has tried. The inspiration behind the app goes back to my experience as a chef where after every busy shift, employees share a few pints of beer while cleaning the kitchen to reward ourselves for our hard work. 
 
-## Getting Started
+# Deployed Link: 
+[DupeFlix]([https://beer-house.herokuapp.com/](https://dupeflix.vercel.app/auth))
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## As a user, I want to be able to:
+1. Search different beers and read their description.
+2. Track the beer I have tried and rate them.
+3. Make a review of the beer that I tried.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## MVP 
+1. Fetch from video api.
+2. Display and play movies.
+3. Add to favorites.
+    In the favorites list:
+        a. Remove a movie from the list.
+        b. Click on a movie and show the details.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+4. Sign up, Log in where user can only access their own favorite movies.
+5. OAuth sign up using Google and Discord.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## STRETCH GOALS
+1. Make a trending movie page where you can upvote and downvote movies.
+2. Add more movies, include indies from university students film makers.
+3. Make the website fully accessible and WCAG compliant.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# netflix-clone
+## TECH STACK AND API:
+I used Typescript, NextJS, Prisma, TailwindCSS, and MongoDB.
