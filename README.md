@@ -4,7 +4,7 @@ Typescript, Prisma, TailwindCSS,and MongoDB
 For my second GA Project, I decided to build a fullstack app that tracks the artisan beers the user has tried. The inspiration behind the app goes back to my experience as a chef where after every busy shift, employees share a few pints of beer while cleaning the kitchen to reward ourselves for our hard work. 
 
 # Deployed Link: 
-[DupeFlix]([https://beer-house.herokuapp.com/](https://dupeflix.vercel.app/auth))
+[DupeFlix](https://dupeflix.vercel.app/auth)
 
 
 ## As a user, I want to be able to:
